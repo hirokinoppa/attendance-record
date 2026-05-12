@@ -212,7 +212,8 @@ mysql -u root -p
 ```sh
 CREATE DATABASE coachtech_attendance_test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 GRANT ALL PRIVILEGES ON coachtech_attendance_test.* TO 'laravel_user'@'%';
-FLUSH PRIVILEGES;```
+FLUSH PRIVILEGES;
+```
 
 4. .env.testingの設定
 ```sh
