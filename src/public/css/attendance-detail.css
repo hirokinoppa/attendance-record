@@ -1,0 +1,349 @@
+.attendance-detail {
+    padding: 48px 20px 70px;
+    background-color: #f1f1f1;
+    min-height: calc(100vh - 56px);
+}
+
+.attendance-detail__inner {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.attendance-detail__heading {
+    margin: 0 0 36px;
+    padding-left: 14px;
+    border-left: 6px solid #000000;
+    color: #000000;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.attendance-detail__card {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.attendance-detail__row {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    align-items: center;
+    min-height: 112px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.attendance-detail__row:last-child {
+    border-bottom: none;
+}
+
+.attendance-detail__label {
+    padding-left: 34px;
+    color: #737373;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.attendance-detail__value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 90px;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* 通常の3列表示：開始位置は attendance-detail__value の padding-left で統一 */
+.attendance-detail__value-grid {
+    display: grid;
+    grid-template-columns: 120px 50px 120px;
+    column-gap: 36px;
+    align-items: center;
+}
+
+/* 名前・備考など単体表示 */
+.attendance-detail__value-grid--single {
+    display: block;
+    width: 100%;
+}
+
+.attendance-detail__value-grid--single > span {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    text-align: left;
+}
+
+/* 日付だけは 年 と 日付 の2列配置 */
+.attendance-detail__value-grid--date {
+    display: grid;
+    grid-template-columns: 120px 50px 120px;
+    column-gap: 36px;
+    align-items: center;
+}
+
+.attendance-detail__date-year {
+    grid-column: 1;
+    width: 120px;
+    text-align: left;
+}
+
+.attendance-detail__date-day {
+    grid-column: 3;
+    width: 120px;
+    text-align: left;
+}
+
+.attendance-detail__plain-time,
+.attendance-detail__input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 120px;
+    height: 40px;
+    color: #000000;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.attendance-detail__input {
+    justify-content: center;
+    padding: 0 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    background-color: #ffffff;
+    text-align: center;
+    outline: none;
+}
+
+.attendance-detail__input:focus {
+    border-color: #000000;
+}
+
+.attendance-detail__separator {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    color: #000000;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.attendance-detail__textarea,
+.attendance-detail__note-box {
+    width: 320px;
+    min-height: 74px;
+    padding: 12px 14px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.attendance-detail__textarea {
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    resize: none;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.attendance-detail__textarea:focus {
+    border-color: #000000;
+}
+
+.attendance-detail__note-box {
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.attendance-detail__note-text {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    text-align: left;
+    line-height: 1.5;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.attendance-detail__error {
+    margin: 8px 0 0;
+    color: #ff4b4b;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.attendance-detail__button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 900px;
+    margin: 36px auto 0;
+}
+
+.attendance-detail__button {
+    min-width: 128px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.attendance-detail__button:hover {
+    opacity: 0.85;
+}
+
+.attendance-detail__message {
+    width: 100%;
+    max-width: 900px;
+    margin: 28px auto 0;
+    padding-right: 12px;
+    text-align: right;
+    color: #ff7b7b;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.attendance-detail__message--approved {
+    color: #737373;
+}
+
+/* タブレット対応 */
+@media screen and (max-width: 850px) {
+    .attendance-detail__inner {
+        max-width: 760px;
+    }
+
+    .attendance-detail__card {
+        max-width: 720px;
+    }
+
+    .attendance-detail__row {
+        grid-template-columns: 190px 1fr;
+        min-height: 100px;
+    }
+
+    .attendance-detail__label {
+        padding-left: 28px;
+        font-size: 18px;
+    }
+
+    .attendance-detail__value {
+        padding-left: 50px;
+        font-size: 21px;
+    }
+
+    .attendance-detail__value-grid,
+    .attendance-detail__value-grid--date {
+        grid-template-columns: 105px 36px 105px;
+        column-gap: 24px;
+    }
+
+    .attendance-detail__date-year,
+    .attendance-detail__date-day,
+    .attendance-detail__plain-time,
+    .attendance-detail__input {
+        width: 105px;
+        font-size: 20px;
+    }
+
+    .attendance-detail__separator {
+        width: 36px;
+        font-size: 22px;
+    }
+
+    .attendance-detail__note-text {
+        max-width: 420px;
+    }
+
+    .attendance-detail__message,
+    .attendance-detail__button-wrapper {
+        max-width: 720px;
+    }
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+    .attendance-detail {
+        padding: 32px 16px 48px;
+    }
+
+    .attendance-detail__heading {
+        margin-bottom: 28px;
+        font-size: 24px;
+    }
+
+    .attendance-detail__card {
+        max-width: 100%;
+    }
+
+    .attendance-detail__row {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .attendance-detail__label {
+        padding: 0 20px 12px;
+        font-size: 16px;
+    }
+
+    .attendance-detail__value {
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    .attendance-detail__value-grid,
+    .attendance-detail__value-grid--date {
+        grid-template-columns: 90px 28px 90px;
+        column-gap: 8px;
+    }
+
+    .attendance-detail__date-year,
+    .attendance-detail__date-day,
+    .attendance-detail__plain-time,
+    .attendance-detail__input {
+        width: 90px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .attendance-detail__separator {
+        width: 28px;
+        font-size: 18px;
+    }
+
+    .attendance-detail__textarea,
+    .attendance-detail__note-box {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .attendance-detail__note-text {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .attendance-detail__button-wrapper,
+    .attendance-detail__message {
+        max-width: 100%;
+    }
+
+    .attendance-detail__button {
+        min-width: 120px;
+        font-size: 16px;
+    }
+}

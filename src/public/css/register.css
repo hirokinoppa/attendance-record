@@ -1,0 +1,118 @@
+/* =========================
+   会員登録画面
+========================= */
+.register {
+    display: flex;
+    justify-content: center;
+    padding: 32px 20px;
+    background-color: #ffffff;
+    min-height: calc(100vh - 64px);
+}
+
+.register__inner {
+    width: 100%;
+    max-width: 620px;
+}
+
+.register__heading {
+    margin: 0 0 28px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.register__form {
+    width: 100%;
+}
+
+.register__group {
+    margin-bottom: 16px;
+}
+
+.register__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.register__input {
+    width: 100%;
+    height: 52px;
+    padding: 10px 14px;
+    border: 1px solid #909090;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.register__input:focus {
+    border-color: #000000;
+}
+
+.register__error-item {
+    min-height: 20px;
+    margin: 6px 0 0;
+    color: #ff4b4b;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.register__button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.register__button:hover {
+    opacity: 0.85;
+}
+
+.register__link-wrapper {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.register__link {
+    color: #0073ff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* =========================
+   レスポンシブ
+========================= */
+@media screen and (max-width: 768px) {
+    .register {
+        padding: 24px 16px;
+    }
+
+    .register__heading {
+        margin-bottom: 24px;
+        font-size: 30px;
+    }
+
+    .register__label {
+        font-size: 20px;
+    }
+
+    .register__input {
+        height: 48px;
+    }
+
+    .register__button {
+        font-size: 22px;
+    }
+
+    .register__link {
+        font-size: 18px;
+    }
+}

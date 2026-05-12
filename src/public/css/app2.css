@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f1f1f1;
+    color: #000000;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+.header {
+    background-color: #000000;
+    width: 100%;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 10px 40px;
+}
+
+.header__logo img {
+    display: block;
+    height: 28px;
+    width: auto;
+}
+
+.header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header__nav-link {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.header__nav-link:hover {
+    opacity: 0.8;
+}
+
+.header__logout-form {
+    margin: 0;
+}
+
+.header__logout-button {
+    padding: 0;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.header__logout-button:hover {
+    opacity: 0.8;
+}
+
+/* =========================
+   メイン
+========================= */
+.main {
+    min-height: calc(100vh - 56px);
+}
+
+/* =========================
+   レスポンシブ
+========================= */
+@media screen and (max-width: 768px) {
+    .header__inner {
+        padding: 10px 16px;
+    }
+
+    .header__logo img {
+        height: 28px;
+    }
+
+    .header__nav-list {
+        gap: 16px;
+    }
+
+    .header__nav-link,
+    .header__logout-button {
+        font-size: 14px;
+    }
+}

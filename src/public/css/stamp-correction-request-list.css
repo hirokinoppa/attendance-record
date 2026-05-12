@@ -1,0 +1,119 @@
+.request-list {
+    padding: 48px 20px 80px;
+    background-color: #f1f1f1;
+    min-height: calc(100vh - 56px);
+}
+
+.request-list__inner {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.request-list__heading {
+    margin: 0 0 32px;
+    padding-left: 16px;
+    border-left: 6px solid #000000;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.request-list__tabs {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto 32px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid #000000;
+}
+
+.request-list__tab {
+    color: #000000;
+    font-size: 22px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.request-list__tab--active {
+    font-weight: 700;
+}
+
+.request-list__table-wrapper {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.request-list__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.request-list__table th,
+.request-list__table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: center;
+    font-size: 16px;
+    color: #555555;
+}
+
+.request-list__table th {
+    font-weight: 700;
+    color: #737373;
+    background-color: #ffffff;
+}
+
+.request-list__detail-link {
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.request-list__detail-link:hover {
+    opacity: 0.7;
+}
+
+.request-list__empty {
+    padding: 32px 12px;
+    color: #999999;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+    .request-list {
+        padding: 32px 16px 60px;
+    }
+
+    .request-list__heading {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+
+    .request-list__tabs {
+        gap: 32px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .request-list__tab {
+        font-size: 18px;
+    }
+
+    .request-list__table-wrapper {
+        max-width: 100%;
+    }
+
+    .request-list__table th,
+    .request-list__table td {
+        font-size: 14px;
+        padding: 12px 8px;
+    }
+}

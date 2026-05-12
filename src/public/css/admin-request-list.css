@@ -1,0 +1,128 @@
+.admin-request-list {
+    min-height: calc(100vh - 64px);
+    padding: 80px 20px 80px;
+    background-color: #f1f1f1;
+}
+
+.admin-request-list__inner {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.admin-request-list__heading {
+    margin: 0 0 52px;
+    padding-left: 16px;
+    border-left: 6px solid #000000;
+    color: #000000;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.admin-request-list__tabs {
+    display: grid;
+    grid-template-columns: 160px 160px 1fr;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 42px;
+    border-bottom: 1px solid #000000;
+}
+
+.admin-request-list__tab {
+    padding: 0 0 14px;
+    color: #9a9a9a;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-request-list__tab.is-active {
+    color: #000000;
+}
+
+.admin-request-list__table-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.admin-request-list__table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.admin-request-list__table th,
+.admin-request-list__table td {
+    height: 42px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #737373;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.admin-request-list__table th {
+    border-bottom: 3px solid #e0e0e0;
+}
+
+.admin-request-list__table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-request-list__table td {
+    color: #737373;
+}
+
+.admin-request-list__detail-link {
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-request-list__detail-link:hover {
+    opacity: 0.7;
+}
+
+.admin-request-list__empty {
+    padding: 24px 0;
+    color: #9a9a9a;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .admin-request-list {
+        padding: 40px 16px 60px;
+    }
+
+    .admin-request-list__inner {
+        max-width: 100%;
+    }
+
+    .admin-request-list__heading {
+        margin-bottom: 32px;
+        font-size: 24px;
+    }
+
+    .admin-request-list__tabs {
+        grid-template-columns: 120px 120px 1fr;
+        margin-bottom: 32px;
+    }
+
+    .admin-request-list__tab {
+        font-size: 14px;
+    }
+
+    .admin-request-list__table-wrapper {
+        overflow-x: auto;
+    }
+
+    .admin-request-list__table {
+        min-width: 760px;
+    }
+}

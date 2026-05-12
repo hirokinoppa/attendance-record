@@ -1,0 +1,136 @@
+.attendance-list {
+    min-height: calc(100vh - 56px);
+    padding: 60px 20px 80px;
+    background-color: #f1f1f1;
+}
+
+.attendance-list__inner {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.attendance-list__heading {
+    margin: 0 0 40px;
+    padding-left: 18px;
+    border-left: 6px solid #000000;
+    color: #000000;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.attendance-list__month-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    padding: 14px 22px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.attendance-list__month-link {
+    color: #9a9a9a;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.attendance-list__month-form {
+    margin: 0;
+}
+
+.attendance-list__month-picker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.attendance-list__calendar-image {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.attendance-list__month-input {
+    width: 150px;
+    min-width: 150px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.attendance-list__month-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.attendance-list__month-input:focus {
+    outline: none;
+}
+
+.attendance-list__table-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.attendance-list__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-list__table th,
+.attendance-list__table td {
+    height: 42px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #737373;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.attendance-list__detail-link {
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.attendance-list__detail-empty {
+    color: #000000;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .attendance-list {
+        padding: 40px 16px 60px;
+    }
+
+    .attendance-list__heading {
+        font-size: 24px;
+    }
+
+    .attendance-list__month-input {
+        width: 130px;
+        min-width: 130px;
+        font-size: 16px;
+    }
+
+    .attendance-list__calendar-image {
+        width: 20px;
+        height: 20px;
+    }
+
+    .attendance-list__table th,
+    .attendance-list__table td {
+        padding: 10px 6px;
+        font-size: 13px;
+    }
+}

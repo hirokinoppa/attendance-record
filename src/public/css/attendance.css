@@ -1,0 +1,118 @@
+.attendance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 225px);
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+}
+
+.attendance__inner {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.attendance__status {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background-color: #d9d9d9;
+    color: #696969;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.attendance__date {
+    margin: 0 0 24px;
+    font-size: 36px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.attendance__time {
+    margin: 0 0 60px;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000000;
+}
+
+.attendance__button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    min-height: 92px;
+    flex-wrap: wrap;
+}
+
+.attendance__form {
+    margin: 0;
+}
+
+.attendance__button {
+    min-width: 220px;
+    padding: 18px 32px;
+    border: none;
+    border-radius: 16px;
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.attendance__button--primary {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.attendance__button--secondary {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.attendance__button:hover {
+    opacity: 0.85;
+}
+
+.attendance__finished-message {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+    .attendance {
+        padding: 32px 16px;
+    }
+
+    .attendance__status {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    .attendance__date {
+        font-size: 28px;
+    }
+
+    .attendance__time {
+        margin-bottom: 40px;
+        font-size: 60px;
+    }
+
+    .attendance__button-wrapper {
+        gap: 20px;
+        min-height: 78px;
+    }
+
+    .attendance__button {
+        min-width: 160px;
+        font-size: 24px;
+    }
+
+    .attendance__finished-message {
+        font-size: 22px;
+    }
+}

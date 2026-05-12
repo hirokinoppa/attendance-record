@@ -1,0 +1,56 @@
+/* =========================
+   共通設定
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+.header {
+    width: 100%;
+    background-color: #000000;
+    padding: 14px 24px;
+}
+
+.header__logo {
+    display: inline-block;
+}
+
+.header__logo img {
+    display: block;
+    height: 36px;
+    width: auto;
+}
+
+/* =========================
+   メイン
+========================= */
+.main {
+    min-height: calc(100vh - 64px);
+}
+
+/* =========================
+   レスポンシブ
+========================= */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 12px 16px;
+    }
+
+    .header__logo img {
+        height: 30px;
+    }
+}
