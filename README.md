@@ -25,17 +25,33 @@
 
 1. Docker clone
 ```sh
-git clone git@github.com:hirokinoppa/coachtech-attendance-record.git
+git clone git@github.com:hirokinoppa/attendance-record.git
 ```
 
 2. Change Directory
 ```sh
-cd coachtech-attendance-record
+cd attendance-record
 ```
 
 3. Docker Build
 ```sh
 docker-compose up -d --build
+```
+
+---
+
+### MySQLが起動しない場合
+
+MySQLのデータ領域に古いデータが残っていると起動できない場合があります
+
+```sh
+docker compose down
+```
+```sh
+rm -rf ./docker/mysql/data
+```
+```sh
+docker compose up -d --build
 ```
 
 ---
@@ -57,7 +73,21 @@ composer install
 cp .env.example .env
 ```
 
-4. envファイルの編集(Part1)
+4. storageフォルダの作成
+```sh
+mkdir -p storage/logs
+```
+
+```sh
+chmod -R 775 storage bootstrap/cache
+```
+
+```sh
+chown -R www-data:www-data storage bootstrap/cache
+```
+
+
+5. envファイルの編集(Part1)
 ファイル内の一部を書き換えてください。
 ```sh
 
@@ -69,7 +99,7 @@ DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 
 ```
-5. .envファイルの編集(Part2)
+6. .envファイルの編集(Part2)
 ファイル内の一部を書き換えてください。
 ```sh
 
@@ -85,17 +115,17 @@ MAIL_EHLO_DOMAIN=localhost
 
 ```
 
-6. キーの作成
+7. キーの作成
 ```sh
 php artisan key:generate
 ```
 
-7. マイグレーションの読み込み
+8. マイグレーションの読み込み
 ```sh
 php artisan migrate
 ```
 
-8. シーダーファイルの読み込み
+9. シーダーファイルの読み込み
 ```sh
 php artisan db:seed
 ```
@@ -105,12 +135,39 @@ php artisan db:seed
 
 
 ## 開発環境
-- トップページ：http://localhost/
 - 一般ユーザーログイン：http://localhost/login
 - 管理者ログイン：http://localhost/admin/login
 - phpMyAdmin：http://localhost:8080/
 - MailHog(メール認証):http://localhost:8025/
 
+
+---
+
+## テスト用アカウント
+
+※ `php artisan db:seed` 実行後に利用できます。
+
+### 一般ユーザー
+
+メールアドレス
+```sh
+staff1@example.com
+```
+パスワード
+```sh
+password
+```
+
+### 管理者
+
+メールアドレス
+```sh
+admin@example.com
+```
+パスワード
+```sh
+password
+```
 
 ---
 
