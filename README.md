@@ -56,7 +56,7 @@ docker compose up -d --build
 
 ---
 
-### Laravel環境構築
+## Laravel環境構築
 
 1. PHPコンテナ内にログイン
 ```sh
