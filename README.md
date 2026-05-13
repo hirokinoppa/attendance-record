@@ -100,10 +100,6 @@ php artisan migrate
 php artisan db:seed
 ```
 
-9. ストレージファイルをリンクさせる
-```sh
-php artisan storage:link
-```
 
 ---
 
