@@ -196,6 +196,8 @@ php artisan storage:link
  を利用して実行しています。
 
  これにより、実際のデータを破壊することなく安全にテストを行うことができます。
+
+---
 ### テスト用データベースの作成
 
 1. MySQLコンテナにログインする
@@ -215,7 +217,13 @@ GRANT ALL PRIVILEGES ON coachtech_attendance_test.* TO 'laravel_user'@'%';
 FLUSH PRIVILEGES;
 ```
 
-4. .env.testingの設定
+4. .env.testingの作成
+```sh
+cp .env .env.testing
+```
+
+
+5. .env.testingの設定
 ```sh
 APP_ENV=testing
 
@@ -233,7 +241,7 @@ MAIL_MAILER=array
 ```
 
 ---
-###　テスト実行
+###　 テスト実行
 
 1. PHPコンテナにログインする
 ```sh
@@ -242,7 +250,7 @@ docker compose exec php bash
 
 2. テスト用DBにマイグレーションを実行する
 ```sh
-php artisan migrate --env=testing
+php artisan migrate:fresh --env=testing
 ```
 
 3. テストを実行
