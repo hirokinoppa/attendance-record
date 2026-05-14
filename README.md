@@ -35,7 +35,7 @@ cd attendance-record
 
 3. Docker Build
 ```sh
-docker-compose up -d --build
+docker　compose up -d --build
 ```
 
 ---
@@ -135,6 +135,7 @@ php artisan db:seed
 
 
 ## 開発環境
+
 - 一般ユーザーログイン：http://localhost/login
 - 管理者ログイン：http://localhost/admin/login
 - phpMyAdmin：http://localhost:8080/
