@@ -27,7 +27,9 @@ class AdminController extends Controller
             ->get();
 
         $attendances = Attendance::query()
-            ->with('breakTimes')
+            ->with(['breakTimes' => function ($query) {
+                $query->orderBy('break_start_at');
+            }])
             ->whereDate('work_date', $currentDate->toDateString())
             ->get()
             ->keyBy('user_id');
@@ -267,7 +269,6 @@ class AdminController extends Controller
         return response()->streamDownload(function () use ($days) {
             $handle = fopen('php://output', 'w');
 
-            // Excel文字化け対策
             fprintf($handle, chr(0xEF) . chr(0xBB) . chr(0xBF));
 
             fputcsv($handle, [
@@ -294,13 +295,40 @@ class AdminController extends Controller
         ]);
     }
 
+    public function staffAttendanceDetailByDate($id, $date)
+    {
+        $staff = User::query()
+            ->where('role', 'general')
+            ->findOrFail($id);
+
+        $workDate = Carbon::parse($date)->toDateString();
+
+        $attendance = Attendance::firstOrCreate(
+            [
+                'user_id' => $staff->id,
+                'work_date' => $workDate,
+            ],
+            [
+                'clock_in_at' => null,
+                'clock_out_at' => null,
+                'note' => '',
+            ]
+        );
+
+        return redirect()->route('admin.attendance.detail', [
+            'id' => $attendance->id,
+        ]);
+    }
+
     private function makeStaffAttendanceDays(int $staffId, Carbon $currentMonth): array
     {
         $startOfMonth = $currentMonth->copy()->startOfMonth();
         $endOfMonth = $currentMonth->copy()->endOfMonth();
 
         $attendances = Attendance::query()
-            ->with('breakTimes')
+            ->with(['breakTimes' => function ($query) {
+                $query->orderBy('break_start_at');
+            }])
             ->where('user_id', $staffId)
             ->whereBetween('work_date', [
                 $startOfMonth->toDateString(),
@@ -341,6 +369,7 @@ class AdminController extends Controller
 
             $days[] = [
                 'date' => $date->isoFormat('MM/DD(ddd)'),
+                'date_key' => $dateKey,
                 'attendance_id' => $attendance?->id,
                 'clock_in_at' => $attendance && $attendance->clock_in_at
                     ? Carbon::parse($attendance->clock_in_at)->format('H:i')

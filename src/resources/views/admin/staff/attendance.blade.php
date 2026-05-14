@@ -85,7 +85,15 @@
                                             詳細
                                         </a>
                                     @else
-                                        <span class="admin-staff-attendance__detail-empty">詳細</span>
+                                        <a
+                                            href="{{ route('admin.attendance.staff.detail_by_date', [
+                                                'id' => $staff->id,
+                                                'date' => $day['date_key'],
+                                            ]) }}"
+                                            class="admin-staff-attendance__detail-link"
+                                        >
+                                            詳細
+                                        </a>
                                     @endif
                                 </td>
                             </tr>

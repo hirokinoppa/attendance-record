@@ -24,7 +24,9 @@ class AttendanceController extends Controller
         $today = Carbon::today();
 
         $attendance = Attendance::query()
-            ->with('breakTimes')
+            ->with(['breakTimes' => function ($query) {
+                $query->orderBy('break_start_at');
+            }])
             ->where('user_id', $user->id)
             ->where('work_date', $today->toDateString())
             ->first();
@@ -95,7 +97,9 @@ class AttendanceController extends Controller
         $today = Carbon::today()->toDateString();
 
         $attendance = Attendance::query()
-            ->with('breakTimes')
+            ->with(['breakTimes' => function ($query) {
+                $query->orderBy('break_start_at');
+            }])
             ->where('user_id', $user->id)
             ->where('work_date', $today)
             ->first();
@@ -130,7 +134,9 @@ class AttendanceController extends Controller
         $today = Carbon::today()->toDateString();
 
         $attendance = Attendance::query()
-            ->with('breakTimes')
+            ->with(['breakTimes' => function ($query) {
+                $query->orderBy('break_start_at');
+            }])
             ->where('user_id', $user->id)
             ->where('work_date', $today)
             ->first();
@@ -162,7 +168,9 @@ class AttendanceController extends Controller
         $today = Carbon::today()->toDateString();
 
         $attendance = Attendance::query()
-            ->with('breakTimes')
+            ->with(['breakTimes' => function ($query) {
+                $query->orderBy('break_start_at');
+            }])
             ->where('user_id', $user->id)
             ->where('work_date', $today)
             ->first();
@@ -199,7 +207,9 @@ class AttendanceController extends Controller
         $endOfMonth = $currentMonth->copy()->endOfMonth();
 
         $attendances = Attendance::query()
-            ->with('breakTimes')
+            ->with(['breakTimes' => function ($query) {
+                $query->orderBy('break_start_at');
+            }])
             ->where('user_id', $user->id)
             ->whereBetween('work_date', [
                 $startOfMonth->toDateString(),
@@ -240,6 +250,7 @@ class AttendanceController extends Controller
 
             $days[] = [
                 'date' => $date->isoFormat('MM/DD(ddd)'),
+                'date_key' => $dateKey,
                 'attendance_id' => $attendance?->id,
                 'clock_in_at' => $attendance && $attendance->clock_in_at
                     ? Carbon::parse($attendance->clock_in_at)->format('H:i')
@@ -316,6 +327,31 @@ class AttendanceController extends Controller
                 : '',
             'breakTimes' => $breakTimes,
             'note' => $attendance->note ?? '',
+        ]);
+    }
+
+    /**
+     * 日付指定の勤怠詳細画面表示
+     */
+    public function showByDate($date)
+    {
+        $user = Auth::user();
+        $workDate = Carbon::parse($date)->toDateString();
+
+        $attendance = Attendance::firstOrCreate(
+            [
+                'user_id' => $user->id,
+                'work_date' => $workDate,
+            ],
+            [
+                'clock_in_at' => null,
+                'clock_out_at' => null,
+                'note' => '',
+            ]
+        );
+
+        return redirect()->route('attendance.show', [
+            'id' => $attendance->id,
         ]);
     }
 

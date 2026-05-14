@@ -23,36 +23,33 @@
 
             <div class="attendance__button-wrapper">
                 @if ($status === '勤務外')
-                    <form action="{{ route('attendance.clockIn') }}" method="POST" class="attendance__form">
+                    <form action="{{ route('attendance.clock_in') }}" method="POST" class="attendance__form">
                         @csrf
                         <button type="submit" class="attendance__button attendance__button--primary">
                             出勤
                         </button>
                     </form>
-
                 @elseif ($status === '出勤中')
-                    <form action="{{ route('attendance.clockOut') }}" method="POST" class="attendance__form">
+                    <form action="{{ route('attendance.clock_out') }}" method="POST" class="attendance__form">
                         @csrf
                         <button type="submit" class="attendance__button attendance__button--primary">
                             退勤
                         </button>
                     </form>
 
-                    <form action="{{ route('attendance.breakStart') }}" method="POST" class="attendance__form">
+                    <form action="{{ route('attendance.break_start') }}" method="POST" class="attendance__form">
                         @csrf
                         <button type="submit" class="attendance__button attendance__button--secondary">
                             休憩入
                         </button>
                     </form>
-
                 @elseif ($status === '休憩中')
-                    <form action="{{ route('attendance.breakEnd') }}" method="POST" class="attendance__form">
+                    <form action="{{ route('attendance.break_end') }}" method="POST" class="attendance__form">
                         @csrf
                         <button type="submit" class="attendance__button attendance__button--secondary">
                             休憩戻
                         </button>
                     </form>
-
                 @elseif ($status === '退勤済')
                     <p class="attendance__finished-message">お疲れ様でした。</p>
                 @endif

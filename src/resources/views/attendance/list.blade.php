@@ -82,7 +82,12 @@
                                             詳細
                                         </a>
                                     @else
-                                        <span class="attendance-list__detail-empty">詳細</span>
+                                        <a
+                                            href="{{ route('attendance.show_by_date', ['date' => $day['date_key']]) }}"
+                                            class="attendance-list__detail-link"
+                                        >
+                                            詳細
+                                        </a>
                                     @endif
                                 </td>
                             </tr>

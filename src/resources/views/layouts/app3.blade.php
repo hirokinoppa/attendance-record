@@ -42,5 +42,7 @@
     <main class="main">
         @yield('content')
     </main>
+
+    @yield('script')
 </body>
 </html>
