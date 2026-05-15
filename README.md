@@ -50,6 +50,11 @@ docker compose down
 ```sh
 rm -rf ./docker/mysql/data
 ```
+※権限エラーが出た場合、下記のコードを入力してください
+```sh
+sudo rm -rf ./docker/mysql/data
+```
+
 ```sh
 docker compose up -d --build
 ```
