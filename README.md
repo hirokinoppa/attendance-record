@@ -35,7 +35,7 @@ cd attendance-record
 
 3. Docker Build
 ```sh
-docker　compose up -d --build
+docker compose up -d --build
 ```
 
 ---
@@ -163,7 +163,7 @@ password
 
 メールアドレス
 ```sh
-admin@example.com
+admin@test.com
 ```
 パスワード
 ```sh
