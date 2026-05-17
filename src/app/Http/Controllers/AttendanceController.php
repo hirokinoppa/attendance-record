@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\DB;
 
 class AttendanceController extends Controller
 {
-    /**
-     * 勤怠打刻画面表示
-     */
     public function index()
     {
         $user = Auth::user();
@@ -56,9 +53,6 @@ class AttendanceController extends Controller
         ]);
     }
 
-    /**
-     * 出勤処理
-     */
     public function clockIn()
     {
         $user = Auth::user();
@@ -88,9 +82,6 @@ class AttendanceController extends Controller
         return redirect()->route('attendance.index');
     }
 
-    /**
-     * 退勤処理
-     */
     public function clockOut()
     {
         $user = Auth::user();
@@ -125,9 +116,6 @@ class AttendanceController extends Controller
         return redirect()->route('attendance.index');
     }
 
-    /**
-     * 休憩開始処理
-     */
     public function breakStart()
     {
         $user = Auth::user();
@@ -159,9 +147,6 @@ class AttendanceController extends Controller
         return redirect()->route('attendance.index');
     }
 
-    /**
-     * 休憩終了処理
-     */
     public function breakEnd()
     {
         $user = Auth::user();
@@ -275,9 +260,6 @@ class AttendanceController extends Controller
         ]);
     }
 
-    /**
-     * 勤怠詳細画面表示
-     */
     public function show($id)
     {
         $user = Auth::user();
@@ -330,9 +312,6 @@ class AttendanceController extends Controller
         ]);
     }
 
-    /**
-     * 日付指定の勤怠詳細画面表示
-     */
     public function showByDate($date)
     {
         $user = Auth::user();
@@ -355,9 +334,6 @@ class AttendanceController extends Controller
         ]);
     }
 
-    /**
-     * 修正申請処理
-     */
     public function update(AttendanceUpdateRequest $request, $id)
     {
         $user = Auth::user();

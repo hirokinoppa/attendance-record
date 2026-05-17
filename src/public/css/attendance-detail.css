@@ -57,7 +57,6 @@
     font-weight: 700;
 }
 
-/* 通常の3列表示：開始位置は attendance-detail__value の padding-left で統一 */
 .attendance-detail__value-grid {
     display: grid;
     grid-template-columns: 120px 50px 120px;
@@ -65,7 +64,6 @@
     align-items: center;
 }
 
-/* 名前・備考など単体表示 */
 .attendance-detail__value-grid--single {
     display: block;
     width: 100%;
@@ -78,7 +76,6 @@
     text-align: left;
 }
 
-/* 日付だけは 年 と 日付 の2列配置 */
 .attendance-detail__value-grid--date {
     display: grid;
     grid-template-columns: 120px 50px 120px;
@@ -221,7 +218,6 @@
     color: #737373;
 }
 
-/* タブレット対応 */
 @media screen and (max-width: 850px) {
     .attendance-detail__inner {
         max-width: 760px;
@@ -275,7 +271,6 @@
     }
 }
 
-/* スマホ対応 */
 @media screen and (max-width: 768px) {
     .attendance-detail {
         padding: 32px 16px 48px;

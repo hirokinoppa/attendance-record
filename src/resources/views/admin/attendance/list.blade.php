@@ -14,16 +14,13 @@
             {{ $currentDate->format('Y年n月j日') }}の勤怠
         </h1>
 
-        <!-- 日付ナビ -->
         <div class="admin-attendance__date-nav">
 
-            <!-- 前日 -->
             <a href="{{ route('admin.attendance.list', ['date' => $previousDate]) }}"
                class="admin-attendance__date-link">
                 ← 前日
             </a>
 
-            <!-- カレンダー（ここが今回のメイン） -->
             <form method="GET" action="{{ route('admin.attendance.list') }}">
                 <label class="admin-attendance__date-picker"
                        onclick="document.getElementById('admin-date-input').showPicker()">
@@ -43,14 +40,12 @@
                 </label>
             </form>
 
-            <!-- 翌日 -->
             <a href="{{ route('admin.attendance.list', ['date' => $nextDate]) }}"
                class="admin-attendance__date-link">
                 翌日 →
             </a>
         </div>
 
-        <!-- テーブル -->
         <div class="admin-attendance__table-wrapper">
             <table class="admin-attendance__table">
                 <thead>

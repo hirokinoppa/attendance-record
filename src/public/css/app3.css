@@ -13,9 +13,6 @@ a {
     text-decoration: none;
 }
 
-/* =========================
-   ヘッダー
-========================= */
 .header {
     width: 100%;
     background-color: #000000;
@@ -84,16 +81,10 @@ a {
     opacity: 0.8;
 }
 
-/* =========================
-   メイン
-========================= */
 .main {
     min-height: calc(100vh - 64px);
 }
 
-/* =========================
-   タブレット
-========================= */
 @media screen and (max-width: 900px) {
     .header__inner {
         padding: 0 18px;
@@ -113,9 +104,6 @@ a {
     }
 }
 
-/* =========================
-   スマホ
-========================= */
 @media screen and (max-width: 600px) {
     .header__inner {
         flex-direction: column;

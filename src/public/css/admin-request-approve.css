@@ -56,14 +56,12 @@
     font-weight: 700;
 }
 
-/* 旧Blade・新Bladeどちらでも同じ開始位置にする */
 .admin-request-approve__content,
 .admin-request-approve__value-grid,
 .admin-request-approve__value-grid--single {
     width: 390px;
 }
 
-/* 時間・日付の3列 */
 .admin-request-approve__content--time,
 .admin-request-approve__value-grid:not(.admin-request-approve__value-grid--single) {
     display: grid;
@@ -72,7 +70,6 @@
     align-items: center;
 }
 
-/* 名前・備考 */
 .admin-request-approve__content:not(.admin-request-approve__content--time),
 .admin-request-approve__value-grid--single {
     display: block;

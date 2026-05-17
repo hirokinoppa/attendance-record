@@ -139,10 +139,10 @@
                         </div>
                     @endforeach
 
-                    <div class="admin-detail__row">
+                    <div class="admin-detail__row admin-detail__row--note">
                         <div class="admin-detail__label">備考</div>
 
-                        <div class="admin-detail__value admin-detail__value--column">
+                        <div class="admin-detail__value admin-detail__value--column admin-detail__value--note">
                             <div class="admin-detail__value-grid admin-detail__value-grid--single">
                                 @if ($isPending)
                                     <div class="admin-detail__plain-note">

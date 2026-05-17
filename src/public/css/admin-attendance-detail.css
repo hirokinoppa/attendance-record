@@ -84,19 +84,24 @@
 
 .admin-detail__input,
 .admin-detail__plain-time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: 120px;
     height: 40px;
     color: #000000;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     font-weight: 700;
 }
 
 .admin-detail__input {
+    justify-content: center;
     padding: 0 10px;
     border: 1px solid #d9d9d9;
     border-radius: 6px;
     background-color: #ffffff;
+    text-align: center;
     outline: none;
 }
 
@@ -110,13 +115,8 @@
     border-color: #000000;
 }
 
-.admin-detail__plain-time {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .admin-detail__separator {
+    grid-column: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,20 +124,26 @@
     color: #000000;
     font-size: 26px;
     font-weight: 700;
+
+    /* ← ここ追加 */
+    transform: translateX(-18px);
+}
+
+.admin-detail__textarea,
+.admin-detail__plain-note {
+    width: 320px;
+    min-height: 74px;
+    padding: 12px 14px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .admin-detail__textarea {
-    display: block;
-    width: 320px;
-    height: 74px;
-    padding: 12px 14px;
     border: 1px solid #d9d9d9;
     border-radius: 6px;
     resize: none;
     background-color: #ffffff;
-    color: #000000;
-    font-size: 16px;
-    font-weight: 600;
     outline: none;
 }
 
@@ -146,10 +152,16 @@
 }
 
 .admin-detail__plain-note {
+    display: flex;
+    align-items: center;
+    padding: 0;
     min-height: 40px;
+    font-size: 24px;
+    font-weight: 700;
     line-height: 1.5;
-    white-space: pre-wrap;
-    word-break: break-word;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 .admin-detail__error {
@@ -233,6 +245,13 @@
     .admin-detail__separator {
         width: 36px;
         font-size: 22px;
+        transform: translateX(-12px);
+    }
+
+    .admin-detail__plain-note {
+        width: 420px;
+        max-width: 420px;
+        font-size: 21px;
     }
 
     .admin-detail__button-wrapper,
@@ -287,18 +306,14 @@
     .admin-detail__separator {
         width: 28px;
         font-size: 18px;
+        transform: translateX(-6px);
     }
 
-    .admin-detail__textarea {
+    .admin-detail__textarea,
+    .admin-detail__plain-note {
         width: 100%;
-        max-width: 320px;
-        height: 74px;
-        font-size: 15px;
-    }
-
-    .admin-detail__value-grid--single > span,
-    .admin-detail__value-grid--single > .admin-detail__plain-note {
         max-width: 100%;
+        font-size: 15px;
     }
 
     .admin-detail__button-wrapper,
